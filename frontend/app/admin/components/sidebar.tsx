@@ -88,7 +88,7 @@ const menuItems = [
   {
     name: "Logout",
     icon: LogOut,
-    href: "/authentication/login",
+    href: "/",
     isLogout: true,
   }, // ✅ mark logout
 ];
@@ -103,10 +103,9 @@ export default function Sidebar() {
       await dispatch(logout());
     } catch (error) {
       console.error("Logout failed", error);
-    } finally {
-      router.push("/authentication/login"); // move to login
-      router.refresh(); // reloads data / clears cache
-      window.location.reload(); // full reload to clear client state
+    }
+    finally {
+      router.push("/");
     }
   };
 

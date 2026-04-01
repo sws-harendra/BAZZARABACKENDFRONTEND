@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Mail, Lock, Eye, EyeOff, User, ArrowRight } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, User, ArrowRight, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { useAppDispatch, useAppSelector } from "@/app/lib/store/store";
@@ -214,7 +214,22 @@ export default function LoginForm() {
             >
               Sign up
             </Link>
+
           </p>
+          <div className="mt-6 text-center flex justify-center">
+            <div className="w-full max-w-md">
+              <Link
+                href="/"
+                className="flex items-center gap-2 text-gray-600 hover:text-black transition-all duration-200 group"
+              >
+                <ArrowLeft
+                  size={18}
+                  className="transition-transform duration-200 group-hover:-translate-x-1"
+                />
+                <span className="text-sm font-medium">Back to home</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

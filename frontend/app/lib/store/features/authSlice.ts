@@ -173,18 +173,14 @@ export const logout = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await authService.logout();
-      if (typeof window !== "undefined") {
-        window.location.href = "/authentication/login";
-      }
-
       return response;
     } catch (err: unknown) {
       if (err instanceof Error) {
         return rejectWithValue(err.message);
       }
-      return rejectWithValue("Email login failed");
+      return rejectWithValue("Logout failed");
     }
-  },
+  }
 );
 
 export const getAllDriversforAdmin = createAsyncThunk(

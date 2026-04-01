@@ -8,6 +8,7 @@ import {
   User,
   ArrowRight,
   Camera,
+  ArrowLeft,
 } from "lucide-react";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
@@ -193,6 +194,20 @@ export default function RegisterForm() {
           <p className="text-gray-700 text-lg">
             Sign up to get started with your account
           </p>
+
+          <div className="w-full max-w-md">
+            <Link
+              href="/"
+              className="flex items-center gap-2 text-gray-600 hover:text-black transition-all duration-200 group"
+            >
+              <ArrowLeft
+                size={18}
+                className="transition-transform duration-200 group-hover:-translate-x-1"
+              />
+              <span className="text-sm font-medium">Back to home</span>
+            </Link>
+          </div>
+
         </div>
 
         {/* Main Form Container */}
@@ -511,6 +526,7 @@ export default function RegisterForm() {
           </div>
         </div>
       )}
+
     </div>
   );
 }

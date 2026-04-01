@@ -33,11 +33,11 @@ export default function Footer() {
     fetchLinks();
   }, []);
   return (
-    <footer className=" bg-[#E53935] text-white  ">
+    <footer className=" bg-white text-black">
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Brand */}
         <div>
-          <h2 className="text-3xl font-bold text-white">
+          <h2 className="text-3xl font-bold">
             {/* {brandName} */}
             <Image
               src="/logo.png"
@@ -90,10 +90,10 @@ export default function Footer() {
 
         {/* Shop */}
         <div>
-          <h3 className="text-sm font-semibold uppercase mb-4 text-white">
+          <h3 className="text-sm font-semibold uppercase mb-4 ">
             Shop
           </h3>
-          <ul className="space-y-2 text-sm text-white">
+          <ul className="space-y-2 text-sm ">
             <li>
               <Link href="/products" className="hover:text-white">
                 All Products
@@ -119,10 +119,10 @@ export default function Footer() {
 
         {/* Company */}
         <div>
-          <h3 className="text-sm font-semibold uppercase mb-4 text-white">
+          <h3 className="text-sm font-semibold uppercase mb-4 ">
             Company
           </h3>
-          <ul className="space-y-2 text-sm text-white">
+          <ul className="space-y-2 text-sm ">
             <li>
               <Link href="/refund-policy" className="hover:text-white">
                 Refund Policy{" "}
@@ -143,10 +143,10 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h3 className="text-sm font-semibold uppercase mb-4 text-white">
+          <h3 className="text-sm font-semibold uppercase mb-4 ">
             Contact
           </h3>
-          <ul className="space-y-3 text-sm text-white">
+          <ul className="space-y-3 text-sm ">
             <li className="flex items-center gap-2">
               <Mail size={16} /> info@yourstore.com
             </li>
@@ -158,9 +158,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white py-4 text-center text-sm text-white">
+      <div className="border-t border-gray-300 py-4 text-center text-sm">
         © {new Date().getFullYear()}{" "}
-        <span className="font-semibold text-white">{brandName}</span>. All
+        <span className="font-semibold">{brandName}.in</span>. All
         rights reserved.
         <span className="font-bold"> Design by Startup Web Support</span>
       </div>
