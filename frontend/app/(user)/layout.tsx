@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Edu_NSW_ACT_Foundation } from "next/font/google";
 import EcommerceNavbar from "./components/navbar";
 import Footer from "./components/footer";
-import { brandName } from "../contants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,8 +20,11 @@ const eduCursive = Edu_NSW_ACT_Foundation({
 });
 
 export const metadata: Metadata = {
-  title: brandName,
+  title: "Bazzara.in – Shop Smart Online | Best Deals in India",
   description: "Dashboard section for users",
+  icons: {
+    icon: "/favicon.jpeg", // public folder
+  },
 };
 
 export default function DashboardLayout({

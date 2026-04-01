@@ -338,7 +338,7 @@ export default function EcommerceNavbar() {
                 </Link>
               </div>
             )}
-
+            <div className="font-bold text-red-500 flex-col justify-center items-center"><p>Powered by</p><span className=" text-2xl font-bold"> Outlook Story</span></div>
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}

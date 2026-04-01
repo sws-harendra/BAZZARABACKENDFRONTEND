@@ -1,7 +1,7 @@
 "use client";
 import { brandName } from "@/app/contants";
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import { FaInstagram, FaFacebookF, FaXTwitter, FaTwitter } from "react-icons/fa6";
 import { useEffect, useState } from "react";
@@ -148,10 +148,13 @@ export default function Footer() {
           </h3>
           <ul className="space-y-3 text-sm ">
             <li className="flex items-center gap-2">
-              <Mail size={16} /> info@yourstore.com
+              <Mail size={16} /> Bazzaraindia@gmail.com
             </li>
             <li className="flex items-center gap-2">
-              <Phone size={16} /> +91 98765 43210
+              <Phone size={16} /> +91 98738 60600
+            </li>
+            <li className="flex items-center gap-2">
+              <MapPin size={30} /> T13/2101, Exotica Dreamville, Greter Noida west. Noida -  201308
             </li>
           </ul>
         </div>
@@ -160,7 +163,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-gray-300 py-4 text-center text-sm">
         © {new Date().getFullYear()}{" "}
-        <span className="font-semibold">{brandName}.in</span>. All
+        <Link href="/" className="font-semibold">bazzara.in</Link>. All
         rights reserved.
         <span className="font-bold"> Design by Startup Web Support</span>
       </div>
