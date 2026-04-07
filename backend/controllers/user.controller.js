@@ -37,13 +37,9 @@ exports.registerUser = async (req, res, next) => {
 
     const activationUrl = `${process.env.CLIENT_URL}/activation/${activationToken}`;
     console.log(activationUrl);
-    // await sendmail({
-    //   email,
-    //   subject: "Activate your account",
-    //   message: `Hello ${fullname}, click here: ${activationUrl}`,
-    // });
 
-    {/* console.log("hererere=->");
+
+    console.log("hererere=->");
     await sendmail(
       "email_verify.hbs",
       {
@@ -53,7 +49,6 @@ exports.registerUser = async (req, res, next) => {
       email,
       "Verify Your account",
     );
-*/}
     res.status(201).json({
       success: true,
       message: `Check your email (${email}) to activate your account!`,
