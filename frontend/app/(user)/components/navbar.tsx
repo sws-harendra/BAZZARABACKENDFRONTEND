@@ -325,7 +325,7 @@ export default function EcommerceNavbar() {
                 </Link>
               </div>
             )}
-            <div className=" sm:flex flex-col justify-center items-center text-red-500 font-bold text-center leading-tight">
+            <div className="hidden sm:flex flex-col justify-center items-center text-red-500 font-bold text-center leading-tight">
               <p className="text-[6px] sm:text-xs">Powered by</p>
               <span className="text-[8px] sm:text-xl whitespace-nowrap">
                 Outlook Story
