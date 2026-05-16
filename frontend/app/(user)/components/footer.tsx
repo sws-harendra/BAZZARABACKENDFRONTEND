@@ -1,9 +1,21 @@
 "use client";
 import { brandName } from "@/app/contants";
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
 import Image from "next/image";
-import { FaInstagram, FaFacebookF, FaXTwitter, FaTwitter } from "react-icons/fa6";
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaXTwitter,
+  FaTwitter,
+} from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -39,11 +51,7 @@ export default function Footer() {
         <div>
           <h2 className="text-3xl font-bold">
             {/* {brandName} */}
-            <Image
-              src="/logo.png"
-              width={210}
-              height={210}
-              alt="Logo" />
+            <Image src="/logo.png" width={210} height={210} alt="Logo" />
           </h2>
           <p className="mt-4 text-sm  max-w-xs">
             Your trusted destination for fresh farm products directly from
@@ -52,8 +60,6 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex gap-4 mt-6">
-
-
             {/* Instagram */}
             <a
               href={socialLinks?.instagram || "#"}
@@ -67,7 +73,6 @@ export default function Footer() {
             {/* Facebook */}
             <a
               href={socialLinks?.facebook || "#"}
-
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-full flex items-center justify-center bg-white text-black hover:bg-blue-600 hover:text-white transition"
@@ -90,9 +95,7 @@ export default function Footer() {
 
         {/* Shop */}
         <div>
-          <h3 className="text-sm font-semibold uppercase mb-4 ">
-            Shop
-          </h3>
+          <h3 className="text-sm font-semibold uppercase mb-4 ">Shop</h3>
           <ul className="space-y-2 text-sm ">
             <li>
               <Link href="/products" className="hover:text-white">
@@ -119,9 +122,7 @@ export default function Footer() {
 
         {/* Company */}
         <div>
-          <h3 className="text-sm font-semibold uppercase mb-4 ">
-            Company
-          </h3>
+          <h3 className="text-sm font-semibold uppercase mb-4 ">Company</h3>
           <ul className="space-y-2 text-sm ">
             <li>
               <Link href="/refund-policy" className="hover:text-white">
@@ -143,9 +144,7 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h3 className="text-sm font-semibold uppercase mb-4 ">
-            Contact
-          </h3>
+          <h3 className="text-sm font-semibold uppercase mb-4 ">Contact</h3>
           <ul className="space-y-3 text-sm ">
             <li className="flex items-center gap-2">
               <Mail size={16} /> Bazzaraindia@gmail.com
@@ -154,7 +153,8 @@ export default function Footer() {
               <Phone size={16} /> +91 98738 60600
             </li>
             <li className="flex items-center gap-2">
-              <MapPin size={30} /> T13/2101, Exotica Dreamville, Greter Noida west. Noida -  201308
+              <MapPin size={30} /> T13/2101, Exotica Dreamville, Greter Noida
+              west. Noida - 201308
             </li>
           </ul>
         </div>
@@ -163,8 +163,10 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-gray-300 py-4 text-center text-sm">
         © {new Date().getFullYear()}{" "}
-        <Link href="/" className="font-semibold">bazzara.in</Link>. All
-        rights reserved.
+        <a href="https://startupwebsupport.com/" className="font-semibold">
+          bazzara.in
+        </a>
+        . All rights reserved.
         <span className="font-bold"> Design by Startup Web Support</span>
       </div>
     </footer>

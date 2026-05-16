@@ -19,7 +19,7 @@ import SidebarForm from "../../components/SidebarForm";
 const MediaCoveragePage = () => {
   const dispatch = useAppDispatch();
   const { coverages, status, currentCoverage } = useAppSelector(
-    (state) => state.mediaCoverages
+    (state) => state.mediaCoverages,
   );
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);

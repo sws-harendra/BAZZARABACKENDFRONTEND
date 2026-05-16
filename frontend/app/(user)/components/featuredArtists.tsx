@@ -23,7 +23,7 @@ const FeaturedArtists = () => {
         const data: any = await artistService.featuredArtist();
         setArtists(data || []);
       } catch (error) {
-        console.error("Error fetching featured artists:", error);
+        console.log("Error fetching featured artists:", error);
       } finally {
         setLoading(false);
       }

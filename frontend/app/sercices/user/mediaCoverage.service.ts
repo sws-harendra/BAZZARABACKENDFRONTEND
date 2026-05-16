@@ -27,7 +27,7 @@ export const mediaCoverageService = {
 
       return response.data;
     } catch (error) {
-      console.error("Error fetching media coverages:", error);
+      console.log("Error fetching media coverages:", error);
       return [];
     }
   },
@@ -54,7 +54,7 @@ export const mediaCoverageService = {
       formData,
       {
         headers: { "Content-Type": "multipart/form-data" },
-      }
+      },
     );
     return response.data;
   },
@@ -68,7 +68,7 @@ export const mediaCoverageService = {
   // Toggle media coverage status
   toggleMediaCoverageStatus: async (id: number) => {
     const response = await axiosInstance.patch(
-      `/media-coverage/${id}/toggle-status`
+      `/media-coverage/${id}/toggle-status`,
     );
     return response.data;
   },

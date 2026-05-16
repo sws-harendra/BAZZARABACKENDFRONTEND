@@ -19,7 +19,7 @@ import {
   useAppSelector,
 } from "@/app/lib/store/store";
 import Link from "next/link";
-import Image from 'next/image'
+import Image from "next/image";
 import { logout } from "@/app/lib/store/features/authSlice";
 import { useRouter } from "next/navigation";
 import { selectCartItemsCount } from "@/app/lib/store/features/cartSlice";
@@ -72,9 +72,7 @@ export default function EcommerceNavbar() {
     try {
       setLoading(true);
 
-      const res = await fetch(
-        `http://localhost:8008/products?search=${query}`
-      );
+      const res = await fetch(`http://localhost:8008/products?search=${query}`);
 
       const data = await res.json();
 
@@ -82,7 +80,7 @@ export default function EcommerceNavbar() {
 
       // 🔥 MATCH ANYWHERE LOGIC
       const filtered = products.filter((item) =>
-        item.name.toLowerCase().includes(query.toLowerCase())
+        item.name.toLowerCase().includes(query.toLowerCase()),
       );
 
       setSuggestions(filtered);
@@ -92,7 +90,6 @@ export default function EcommerceNavbar() {
       setLoading(false);
     }
   };
-
 
   return (
     <nav className=" shadow-lg sticky top-0 z-50 border-b bg-white border-gray-100">
@@ -110,13 +107,14 @@ export default function EcommerceNavbar() {
           </div>
         </div>
       </div> */}
-      <div className="bg-[#E53935] text-white text-sm text-center  py-2">
+      {/* <div className="bg-[#E53935] text-white text-sm text-center  py-2">
         <div className="mx-auto px-4 font-semibold ">
-          <span >
-            VALENTINE'S SALE EXTRA FLAT 25% OFF on orders above Rs. 1000/ <span className="font-light">auto applied at checkout</span>
+          <span>
+            VALENTINE'S SALE EXTRA FLAT 25% OFF on orders above Rs. 1000/{" "}
+            <span className="font-light">auto applied at checkout</span>
           </span>
         </div>
-      </div>
+      </div> */}
       {/* <div className="text-[13px]  flex gap-2 md:gap-4 px-4">
           <span>Track Package</span>
           <span>Return & Exchange</span>
@@ -130,21 +128,14 @@ export default function EcommerceNavbar() {
           <div className="flex items-center space-x-1 md:space-x-8">
             <div className="flex-shrink-0">
               <Link href="/">
-                {/* <img
-                  src="/logo.png"
-                  alt="bazzara"
-                  className="w-32 h-auto"
-                /> */}
-                <h2 className=" text-2xl sm:text-5xl">
+                <div className="relative w-[70px] h-[70px] sm:w-[110px] sm:h-[110px]">
                   <Image
                     src="/logo.png"
-                    width={110}
-                    height={110}
-                    alt="Logo" />
-                </h2>
-                {/* <h1 className="text-2xl font-bold bg-gradient-to-r from-green-700 via-green-600 to-lime-500 bg-clip-text text-transparent">
-                 BAZZARA
-                </h1> */}
+                    fill
+                    alt="Logo"
+                    className="object-contain"
+                  />
+                </div>
               </Link>
             </div>
 
@@ -182,15 +173,13 @@ export default function EcommerceNavbar() {
             </div>
           </div> */}
 
-
           {/* Right Actions */}
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-2 sm:space-x-6">
             {/* Mobile Search */}
             <button className="flex items-center gap-1 text-gray-600 hover:text-red-500 transition-colors relative">
-
               {isSearchClicked && (
-                <div className="absolute right-8 top-1/2 -translate-y-1/2 w-64">
-
+                <div className="hidden sm:visible absolute right-0 sm:right-8 top-12 sm:top-1/2 sm:-translate-y-1/2 w-[90vw] sm:w-64 max-w-xs">
+                  {" "}
                   <input
                     type="text"
                     value={searchInput}
@@ -199,11 +188,9 @@ export default function EcommerceNavbar() {
                     placeholder="Search products..."
                     className="w-full pl-4 pr-4 py-2 border border-gray-400 rounded-full focus:ring-2 focus:ring-[#E53935] bg-white"
                   />
-
                   {/* ✅ Suggestions */}
                   {showSuggestions && searchInput.length > 1 && (
                     <div className="absolute top-full left-0 w-full bg-white shadow-lg rounded-lg mt-1 z-50 max-h-60 overflow-y-auto">
-
                       {loading ? (
                         <p className="p-2 text-gray-500">Loading...</p>
                       ) : suggestions.length > 0 ? (
@@ -225,7 +212,6 @@ export default function EcommerceNavbar() {
                       )}
                     </div>
                   )}
-
                 </div>
               )}
 
@@ -237,7 +223,6 @@ export default function EcommerceNavbar() {
                   setisSearchClicked(!isSearchClicked);
                 }}
               />
-
             </button>
             {/* Wishlist */}
             {/* <div className="relative hidden sm:block">
@@ -255,7 +240,7 @@ export default function EcommerceNavbar() {
             <div className="relative">
               <Link href={"/cart"}>
                 <button className="text-gray-600 hover:text-lime-500 transition-colors duration-200 group">
-                  <img src="/trolley.png" className="w-12 h-auto" />
+                  <img src="/trolley.png" className="w-8 sm:w-12 h-auto" />
                   {/* <ShoppingCart className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" /> */}
                   {cartCount > 0 && (
                     <span className="absolute -top-2 -right-2 bg-[#E53935] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-bounce">
@@ -280,8 +265,9 @@ export default function EcommerceNavbar() {
                     {user?.fullname}
                   </span>
                   <ChevronDown
-                    className={`w-4 h-4 hidden lg:block transition-transform duration-200 ${isProfileOpen ? "rotate-180" : ""
-                      }`}
+                    className={`w-4 h-4 hidden lg:block transition-transform duration-200 ${
+                      isProfileOpen ? "rotate-180" : ""
+                    }`}
                   />
                 </button>
 
@@ -332,13 +318,19 @@ export default function EcommerceNavbar() {
               <div>
                 {" "}
                 <Link href="/authentication/login">
-                  <button className="px-5 py-2 text-white bg-[#E53935] rounded-full">
+                  <button className="px-2 sm:px-5 py-1.5 sm:py-2 text-[10px] sm:text-base text-white bg-[#E53935] rounded-full">
+                    {" "}
                     Login
                   </button>
                 </Link>
               </div>
             )}
-            <div className="font-bold text-red-500 flex-col justify-center items-center"><p>Powered by</p><span className=" text-2xl font-bold"> Outlook Story</span></div>
+            <div className=" sm:flex flex-col justify-center items-center text-red-500 font-bold text-center leading-tight">
+              <p className="text-[6px] sm:text-xs">Powered by</p>
+              <span className="text-[8px] sm:text-xl whitespace-nowrap">
+                Outlook Story
+              </span>
+            </div>
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
